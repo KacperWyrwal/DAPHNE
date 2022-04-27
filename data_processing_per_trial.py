@@ -99,7 +99,13 @@ def get_rejected_mask(df, tau_max):
 
 def get_missing_data_ratio(df, tau_max):
     mask = get_rejected_mask(df=df, tau_max=tau_max)
-    return 1 - (~mask).sum() / len(df)
+    
+    cols = mask.columns
+    mask_or = mask[cols[0]]
+    for col in cols[1:]:
+        mask_or |= mask[col]
+
+    return 1 - (~mask_or).sum() / len(df)
 
 
 ##### Saving data #####

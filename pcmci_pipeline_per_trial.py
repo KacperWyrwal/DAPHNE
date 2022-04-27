@@ -104,5 +104,5 @@ def get_selected_links(var_names, tau_max):
         }
     var_to_index = dict(zip(var_names, range(len(var_names))))
     return {index: [(var_to_index[parent], -tau) for parent in var_to_parents[var]
-                    for tau in range(0, tau_max)]
+                    for tau in range(0, tau_max+1)]
             for var, index in var_to_index.items()}

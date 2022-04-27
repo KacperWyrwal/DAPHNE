@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#$ -N stagein_inhale
+#$ -N stagein_daphne
 #$ -cwd
 
 # Choose the staging environment

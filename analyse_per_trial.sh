@@ -1,5 +1,5 @@
 #!/bin/bash
-#$ -N inhale_analysis
+#$ -N daphne_analysis
 #$ -cwd
 
 #$ -pe sharedmem 4

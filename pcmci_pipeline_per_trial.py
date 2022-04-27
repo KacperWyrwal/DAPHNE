@@ -57,6 +57,9 @@ def run_pipeline(ID, path_from, path_to, cond_ind_test='ParCorr', tau_max=60, fd
 
         print(f"{trial=}")
         print(f"{missing_data_ratio=}")
+        if missing_data_ratio == 1.0:
+            print("There are no unmasked samples for PCMCI+ to run on.")
+            return
 
         df = transform_pandas_to_tigramite(df=df)
 
